@@ -1,0 +1,13 @@
+{
+    "deniedPermissions": [
+        "dns.googleapis.com/managedZones.create",
+        "dns.googleapis.com/managedZones.delete",
+        "dns.googleapis.com/managedZones.update",
+        "dns.googleapis.com/policies.create",
+        "dns.googleapis.com/policies.delete",
+        "dns.googleapis.com/policies.update",
+        "dns.googleapis.com/resourceRecordSets.create",
+        "dns.googleapis.com/resourceRecordSets.delete",
+        "dns.googleapis.com/resourceRecordSets.update"
+    ]
+}
