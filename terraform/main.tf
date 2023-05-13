@@ -12,8 +12,7 @@ locals {
   # IAM Deny Exceptions Principals
   networking_exception_principals                = var.networking_exception_principals 
   billing_exception_principals                   = var.billing_exception_principals
-  security_center_exception_principals           = var.security_center_exception_principals
-  sa_exception_principals                        = var.sa_exception_principals
+  dns_exception_principals                       = var.dns_exception_principals
   iamdeny_tester_exception_principals            = var.iamdeny_tester_exception_principals
 }
 
@@ -21,7 +20,7 @@ locals {
 resource "google_iam_deny_policy" "top_level_deny" {
   provider = google-beta
   parent       = urlencode("${var.iamdeny_folder_path}${var.iamdeny_folder_id}") #TODO update to org ID 
-  name         = "poc-iam-deny-policy"
+  name         = "top-iam-deny-policy"
   display_name = "Top level Deny Permissions"
   rules {
     description = "One Rule to Deny them All"
@@ -29,7 +28,7 @@ resource "google_iam_deny_policy" "top_level_deny" {
       denied_principals = ["principalSet://goog/public:all"]
       denial_condition {
         title      = "Match IAM Deny Tag"
-        expression = "resource.matchTagId('tagKeys/281480373632495', 'tagValues/281475126570901')" #Tag=iam_deny, value=enabled 
+        expression = "resource.matchTagId('tagKeys/281480373632495', 'tagValues/281475126570901')" #Tag=iam_deny, value=enabled #TODO: add tags in test org
       }
       denied_permissions = local.project_admin_perms_deny
       exception_principals = local.iamdeny_tester_exception_principals
