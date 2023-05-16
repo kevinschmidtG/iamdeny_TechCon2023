@@ -5,10 +5,7 @@ IAM Deny example repo shown at TechCon 2023
 ## Overview 
 Demo repo shared with [accompanying slides](https://docs.google.com/presentation/d/1v2xs-KBZL1M6tEait86ICbt6o2MmR1bFK_-Sn1hgDcc/edit?usp=sharing&resourcekey=0-YrZzQaQqLEPcmdcoDaesug) for **IAM Deny at Enterprise Scale** at [TechCon 2023](https://www.techcon23.io/). 
 
-Feel free to reach out to kevinaschmidt@google.com for any relevant questions, commments, concerns, derogatory(keep it googley) remarks, etc. 
-
-### TODOs:
-    - sync up repo content with slides
+Feel free to reach out to kevinaschmidt@google.com for any relevant questions, commments, concerns, derogatory remarks (keep it googley), update suggestions, etc. 
 
 ## Pre-requisites 
 
