@@ -24,14 +24,15 @@ variable "region" {
   default     = "us-central1"
 }
 
-variable "path" {
+variable "iamdeny_folder_path" {
   type    = string
   default = "cloudresourcemanager.googleapis.com/folders/"
 }
 
-variable "iamdeny_folder_path" {
-  type    = string
-  default = "cloudresourcemanager.googleapis.com/folders/"
+variable "org_id" {
+  description = "Your Organizations ID"
+  type        = string
+  default     = "786024358417" #Update your default Org here
 }
 
 variable "iamdeny_folder_id" {
