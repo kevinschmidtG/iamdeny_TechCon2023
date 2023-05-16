@@ -12,6 +12,7 @@ Feel free to reach out to kevinaschmidt@google.com for any relevant questions, c
 1. Enable the IAM API in your project
 2. In your project, make sure you are at least [Deny Admin](https://cloud.google.com/iam/docs/understanding-roles#iam.denyAdmin) 
 3. Make sure you are logged into that account when running the gcloud commands below
+4. Have [Terraform installed](https://developer.hashicorp.com/terraform/tutorials/gcp-get-started/install-cli)
 
 
 ## Set up your environment
