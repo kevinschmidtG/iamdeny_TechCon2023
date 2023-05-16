@@ -82,9 +82,3 @@ resource "google_iam_deny_policy" "profile-deny-policy" {
     }
   }
 }
-
-# apply Resource Usage Restriction policies 
-module "folder-policy" {
-  source    = "./api_restriction"
-  folder_id = var.iamdeny_folder_id
-}
