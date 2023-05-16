@@ -12,8 +12,9 @@ Feel free to reach out to kevinaschmidt@google.com for any relevant questions, c
 
 ## Pre-requisites 
 
-1. In your target project, make sure you are at least [Deny Admin](https://cloud.google.com/iam/docs/understanding-roles#iam.denyAdmin) 
-2. Make sure you are logged into that account when running the gcloud commands below
+1. Enable the IAM API in your project
+2. In your project, make sure you are at least [Deny Admin](https://cloud.google.com/iam/docs/understanding-roles#iam.denyAdmin) 
+3. Make sure you are logged into that account when running the gcloud commands below
 
 
 ## Set up your environment
@@ -60,7 +61,7 @@ terraform plan
 
 ## Commands for viewing/debugging
 
-At the time of writing this ReadMe, viewing policies in the Cloud Console isn't currenlty supported, but on the roadmap. To interact with, troubleshoot, and see these policies after application via terraform, keep the following gcloud commands handy. You can also check the main IAM Deny documentation page for the most up to date commands: 
+At the time of writing this ReadMe, viewing policies in the Cloud Console isn't currenlty supported, but on the roadmap. To interact with, troubleshoot, and see these policies after application via terraform, keep the following gcloud commands handy. You can also check the main [IAM Deny documentation page](https://cloud.google.com/iam/docs/deny-access) for the most up to date commands: 
 
 ### List Deny Policies 
 
