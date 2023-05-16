@@ -28,7 +28,7 @@ locals {
 # One Policy to Deny them all
 resource "google_iam_deny_policy" "top_level_deny" {
   provider = google-beta
-  parent       = urlencode("${var.iamdeny_folder_path}${var.iamdeny_folder_id}") #TODO update to org ID 
+  parent       = urlencode("cloudresourcemanager.googleapis.com/organizations/${var.org_id}") #attach at org level
   name         = "top-iam-deny-policy"
   display_name = "Top level Deny Permissions"
   rules {
@@ -37,7 +37,7 @@ resource "google_iam_deny_policy" "top_level_deny" {
       denied_principals = ["principalSet://goog/public:all"]
       denial_condition {
         title      = "Match IAM Deny Tag"
-        expression = "resource.matchTagId('tagKeys/281480373632495', 'tagValues/281475126570901')" #Tag=iam_deny, value=enabled #TODO: add tags in test org
+        expression = "resource.matchTagId('tagKeys/281482384217710', 'tagValues/281477230819536')" #Tag=iam_deny, value=enabled 
       }
       denied_permissions = local.project_admin_perms_deny
       exception_principals = local.iamdeny_tester_exception_principals
@@ -48,7 +48,7 @@ resource "google_iam_deny_policy" "top_level_deny" {
 #Profile specific IAM Deny Policy  
 resource "google_iam_deny_policy" "profile-deny-policy" {
   provider = google-beta
-  parent       = urlencode("${var.iamdeny_folder_path}${var.iamdeny_folder_id}")
+  parent       = urlencode("${var.iamdeny_folder_path}${var.iamdeny_folder_id}") #attach at folder level
   name         = "profile-iam-deny-policy"
   display_name = "Profile Specific IAM Deny Policy"
   rules {
